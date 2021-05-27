@@ -9,7 +9,14 @@ table 50103 "Playlist Line"
         {
             OptionMembers = ,Resource,Show,Item;
         }
-        field(20; "No."; Code[20]) { }
+        field(20; "No."; Code[20])
+        {
+            TableRelation = if (Type = const(Resource)) Resource."No."
+            else
+            if (Type = const(Show)) "Radio Show"."No."
+            else
+            if (Type = const(Item)) Item."No.";
+        }
         field(30; "Data Format"; Option)
         {
             OptionMembers = ,Vinil,CD,MP3,PSA,Advertisment;
@@ -21,4 +28,11 @@ table 50103 "Playlist Line"
         field(80; "End Time"; Time) { }
     }
 
+    keys
+    {
+        key(PK; "Document No.", "Line No.")
+        {
+            Clustered = true;
+        }
+    }
 }
