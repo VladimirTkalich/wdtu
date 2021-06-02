@@ -9,6 +9,7 @@
             "environmentName": "wdtu",
             "startupObjectId": 50100,
             "startupObjectType": "Page",
+            "schemaUpdateMode": "Recreate",
             "breakOnError": true,
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,

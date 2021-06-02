@@ -30,7 +30,7 @@ table 50103 "Playlist Line"
 
     keys
     {
-        key(PK; "Document No.", "Line No.")
+        key(PK; "Document No.")//, "Line No.")
         {
             Clustered = true;
         }

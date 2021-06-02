@@ -4,7 +4,19 @@ table 50100 "Radio Show"
 
     fields
     {
-        field(1; "No."; Code[20]) { }
+        field(1; "No."; Code[20])
+        {
+            Editable = true;
+            trigger OnValidate()
+            begin
+
+            end;
+
+            trigger OnLookup()
+            begin
+
+            end;
+        }
         field(10; "Radio Show Type"; Code[10])
         {
             TableRelation = "Radio Show Type";
@@ -13,9 +25,30 @@ table 50100 "Radio Show"
         field(40; "Run Time"; Duration) { }
         field(50; "Host Code"; Code[20]) { }
         field(60; "Host Name"; Text[50]) { }
-        field(100; "Average Listeners"; Decimal) { }
-        field(110; "Audience Share"; Decimal) { }
-        field(120; "Advertising Revenue"; Decimal) { }
+        field(100; "Average Listeners"; Decimal)
+        {
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = average("Listenership Entry"."Listener Count"
+            where("Radio Show No." = field("No."), Date = field("Date Filter")));
+        }
+        field(110; "Audience Share"; Decimal)
+        {
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = average("Listenership Entry"."Audience Share"
+            where("Radio Show No." = field("No."), Date = field("Date Filter")));
+        }
+        field(120; "Advertising Revenue"; Decimal)
+        {
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = sum("Radio Show Entry"."Free Amount"
+            where(
+                "Radio Show No." = field("No."),
+                "Data Format" = filter(Advertisment)
+            ));
+        }
         field(130; "Royalty Cost"; Decimal) { }
         field(1000; Frequency; Option)
         {
