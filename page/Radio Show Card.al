@@ -9,11 +9,23 @@ page 50101 "Radio Show Card"
     {
         area(Content)
         {
-            group(GroupName)
+            group(General)
             {
-                field("No."; Rec."No.") { ApplicationArea = Basic; }
-                field("Radio Show Type"; Rec."Radio Show Type") { ApplicationArea = Basic; }
-                field("Name"; Rec."Name") { ApplicationArea = Basic; }
+                field("No."; Rec."No.")
+                {
+                    ApplicationArea = Basic;
+                    Importance = Promoted;
+                }
+                field("Radio Show Type"; Rec."Radio Show Type")
+                {
+                    ApplicationArea = Basic;
+                    Importance = Promoted;
+                }
+                field("Name"; Rec."Name")
+                {
+                    ApplicationArea = Basic;
+                    Importance = Promoted;
+                }
                 field("Run Time"; Rec."Run Time") { ApplicationArea = Basic; }
                 field("Host Code"; Rec."Host Code") { ApplicationArea = Basic; }
                 field("Host Name"; Rec."Host Name") { ApplicationArea = Basic; }

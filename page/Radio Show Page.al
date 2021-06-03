@@ -4,6 +4,7 @@ page 50100 "Radio Show List"
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = "Radio Show";
+    CardPageId = "Radio Show Card";
 
     layout
     {
@@ -21,6 +22,14 @@ page 50100 "Radio Show List"
                 field("Audience Share"; Rec."Audience Share") { ApplicationArea = Basic; }
                 field("Advertising Revenue"; Rec."Advertising Revenue") { ApplicationArea = Basic; }
                 field("Royalty Cost"; Rec."Royalty Cost") { ApplicationArea = Basic; }
+            }
+        }
+        area(FactBoxes)
+        {
+            part(Fans; "Radio Show Fan Factbox")
+            {
+                ApplicationArea = Basic;
+                SubPageLink = "Radio Show No." = field("No.");
             }
         }
     }
