@@ -3,7 +3,7 @@ report 50100 "Radio Shows"
     Caption = 'Radio Shows';
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = Basic;
-    WordLayout = 'RadioShows.docx';
+    WordLayout = './report/RadioShows.docx';
     DefaultLayout = Word;
 
     dataset
