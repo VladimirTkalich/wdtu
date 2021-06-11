@@ -33,6 +33,26 @@ page 50111 "Radio Show Fans"
                     ToolTip = 'Specifies the value of the Last Contacted field';
                     ApplicationArea = All;
                 }
+                field(Address; Rec.Address)
+                {
+                    ToolTip = 'Specifies the value of the Address field';
+                    ApplicationArea = All;
+                }
+                field("Post Code"; Rec."Post Code")
+                {
+                    ToolTip = 'Specifies the value of the E-mail field';
+                    ApplicationArea = All;
+                }
+                field(City; Rec.City)
+                {
+                    ToolTip = 'Specifies the value of the E-mail field';
+                    ApplicationArea = All;
+                }
+                field("Country/Region Code"; Rec."Country/Region Code")
+                {
+                    ToolTip = 'Specifies the value of the E-mail field';
+                    ApplicationArea = All;
+                }
                 field("Radio Show No."; Rec."Radio Show No.")
                 {
                     ToolTip = 'Specifies the value of the Radio Show No. field';

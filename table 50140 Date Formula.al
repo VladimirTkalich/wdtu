@@ -22,7 +22,9 @@ table 50140 "Date Formula"
     }
 
     local procedure CalculateNewDate()
+    var
+        DateFormMgt: Codeunit "Date Formula Mgt.";
     begin
-        "Date Result" := CalcDate("Date Formula to Test", "Reference for Date Calculation");
+        "Date Result" := DateFormMgt.CalculateNewDate("Date Formula to Test", "Reference for Date Calculation");
     end;
 }
